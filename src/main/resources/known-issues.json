@@ -1,2 +1,12 @@
-{
+{Description: The Scenarios for Epam webpage
+
+Scenario: 7. Verify required fields on contact form
+
+Given I am on page with URL `https://www.epam.com/about/who-we-are/contact`
+When I click on element located by `By.xpath(//button[@type='submit'])`
+Then number of elements found by `By.xpath(//div[@data-required='true'])` is = `8`
+Then number of elements found by `By.xpath(//span[@class='validation-text' and text = 'This is a required field'])` is = `5`
+Then number of elements found by `By.xpath(//span[@id='new_form_gdprConsent-error'])` is = `1`
+
+
 }
